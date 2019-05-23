@@ -46,6 +46,16 @@ body {
   user-select: none;
 }
 
+.bomb {
+  width: 85px; /* TILE_SIZE */
+  height: 85px; /* TILE_SIZE */
+  position: absolute;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 65px;
+  user-select: none;
+}
+
 .tomb {
   width: 85px; /* TILE_SIZE */
   height: 85px; /* TILE_SIZE */
