@@ -92,3 +92,49 @@ const check = () => {
         document.querySelector("#result").textContent = 'Username invalid';
     }
 };
+
+// calculate salary using DOM
+
+const calcSalary = () => {
+    const inputHours = document.querySelector('#hours');
+    const inputDays = document.querySelector('#days');
+    const inputPay = document.querySelector('#pay');
+
+    let hours = inputHours.value;
+    let days = inputDays.value;
+    let pay = inputPay.value;
+
+    let result = parseInt(hours) * parseInt(days) * parseInt(pay);
+
+    let output = document.querySelector('#result');
+
+    output.textContent= result + 'eur';
+}
+
+// create elements and append them
+const items = [
+    'peter', 'jane', 'tarzan', 'louise', 'superman',
+  ];
+  
+  const update = () => {
+    const container = document.querySelector('.container');
+    container.innerHTML = '';
+  
+    for(let i = 0; i < items.length; i++) {
+      const liElm = document.createElement('li');
+      liElm.className = 'item';
+      liElm.innerHTML = `<strong>${items[i]}</strong>`;
+      container.appendChild(liElm);
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    update();
+    
+    document.addEventListener('click', () => {
+      const item = 'donald';
+      items.push(item); 
+      
+      update();
+    });
+  });
