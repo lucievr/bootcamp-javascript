@@ -189,3 +189,21 @@ document.addEventListener('DOMContentLoaded', () => {
         addItem();
     })
 })
+
+// classes
+
+class Person {
+    constructor(firstName, lastName, age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.likes = 0;
+    }
+  
+    email() {
+      return `${this.firstName.toLowerCase()}@springfield.com`;
+    }
+  }
+  
+  const homer = new Person('Homer', 'Simpson', 39);
+  const marge = new Person('Marge', 'Simpson', 36);
