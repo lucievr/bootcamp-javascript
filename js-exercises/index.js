@@ -111,7 +111,7 @@ const calcSalary = () => {
     output.textContent= result + 'eur';
 }
 
-// create elements and append them
+// create elementsfrom arrays
 const items = [
     'peter', 'jane', 'tarzan', 'louise', 'superman',
   ];
@@ -138,3 +138,54 @@ const items = [
       update();
     });
   });
+
+  // create elements from objects
+
+  const groceryItems = [
+    {name: 'apples',
+    amount: 10}, 
+    {name: 'bananas',
+    amount: 5}, 
+    {name: 'bread',
+    amount: 1}, 
+    {name: 'carrots',
+    amount: 8}, 
+];
+
+const update = () => {
+
+    const list = document.querySelector('#list');
+    list.innerHTML = '';
+
+    for (i=0; i < groceryItems.length; i++) {
+        
+        const listItem = document.createElement('div');
+        listItem.innerHTML = `${groceryItems[i].name}, ${groceryItems[i].amount}`;
+        listItem.className = 'item';
+    
+        list.appendChild(listItem);
+    }
+}
+
+const addItem = () => {
+    const itemName = document.querySelector('#itemname').value;
+    const itemAmount = document.querySelector('#itemamount').value;
+
+    const list = document.querySelector('#list');
+    const listItem = document.createElement('div');
+
+    listItem.innerHTML = `${itemName}, ${itemAmount}`;
+    listItem.className = 'item';
+    
+    list.appendChild(listItem);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    update();
+
+    const button = document.querySelector('#button');
+
+    button.addEventListener('click', () => {
+        addItem();
+    })
+})
