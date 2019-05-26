@@ -49,3 +49,46 @@ let max = parseInt(prompt('Input maximum number:'));
 
 Math.round(min + (Math.random() * (max-min)));
 
+// func greeting 
+
+const greeting = () => {
+    const name_element = document.querySelector('#username');
+    const par = document.querySelector('#greet');
+    const name = name_element.value;
+    par.textContent = 'Hello there, ' + name;
+    par.style.color = 'white';
+    par.style.backgroundColor = 'red';
+  }
+
+// calculator addition
+
+let result = 0;
+
+const onPlus = () => {
+  const inputElm = document.querySelector('.calc__input');
+  const number = parseInt(inputElm.value);
+  
+  result += number;
+  
+  const resultElm = document.querySelector('.calc__result');
+  resultElm.textContent = result;
+};
+
+// checking users
+
+const users = [['frank', 123], [ 'tony', 345], ['jack', 789], [ 'lilly', 876]];
+                
+const check = () => {
+    const inputElm = document.querySelector('.user__input').value;
+    let found = false;
+    for (let i = 0; i < users.length; i++) {
+        if (inputElm === users[i]) {
+        found = true;
+        }
+    }
+    if (found === true) {
+        document.querySelector("#result").textContent = 'Looking Ok!';
+    } else {
+        document.querySelector("#result").textContent = 'Username invalid';
+    }
+};
