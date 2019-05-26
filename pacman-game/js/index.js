@@ -3,11 +3,12 @@ const TILE_SIZE = 85;
 document.addEventListener('DOMContentLoaded', () => {
   const app = document.querySelector("#app");
   
-  const stage = new Stage(20, 25);
+  const stage = new Stage(15, 6);
   stage.mount(app);
   
   const robert = new Pacman(stage, 0, 0);
   robert.mount(stage.element);
+
 
   const wall1 = new Wall(2, 2);
   wall1.mount(stage.element);

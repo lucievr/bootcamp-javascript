@@ -2,6 +2,10 @@ class Stage {
     constructor(width, height) {
         this.width = width;
         this.height = height;
+        this.apples = [
+            new Apple(6,2),
+            
+        ]
     }
 
     render() {

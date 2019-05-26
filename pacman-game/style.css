@@ -74,4 +74,5 @@ body {
   text-align: center;
   padding-top: 65px;
   user-select: none;
+  z-index: 100;
 }
